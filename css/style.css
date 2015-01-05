@@ -1,0 +1,40 @@
+body {
+	background-color: #333;
+}
+
+#kittenDiv {
+	width: 90%;
+	padding: 0 5%;
+	color: #ddd;
+	text-align: center;
+}
+
+#title {
+	font-size: 80px;
+}
+
+.count {
+	font-size: 40px;
+}
+
+#kittens {
+	width: 100%;
+}
+
+#kitten1, #kitten2 {
+	float: left;
+	width: 45%;
+	padding-left: 3%;
+}
+
+img {
+	height: auto;
+	width: 100%;
+	border-radius: 50px;
+}
+
+.kitten {}
+
+.caption {
+
+}
