@@ -2,7 +2,7 @@ body {
 	background-color: #333;
 }
 
-#kittenDiv {
+#main {
 	width: 90%;
 	padding: 0 5%;
 	color: #ddd;
@@ -13,7 +13,7 @@ body {
 	font-size: 80px;
 }
 
-.count {
+#count {
 	font-size: 40px;
 }
 
@@ -21,20 +21,39 @@ body {
 	width: 100%;
 }
 
-#kitten1, #kitten2 {
+#kittenListContainer {
 	float: left;
-	width: 45%;
+	width: 30%;
 	padding-left: 3%;
+}
+
+ul {
+	list-style: none;
+	font-size: 30px;
+	text-align: left;
+	padding-top: 100px;
+}
+
+li:hover {
+	background-color: #777;
+	padding-left: 5%;
+	color: white;
+	font-size: 40px;
+	border-radius: 20px;
 }
 
 img {
 	height: auto;
-	width: 100%;
+	width: 70%;
 	border-radius: 50px;
 }
 
-.kitten {}
+#kitten {
+	float: left;
+	width: 60%;
+	padding-left: 3%;
+}
 
-.caption {
-
+#caption {
+    width: 70%;
 }

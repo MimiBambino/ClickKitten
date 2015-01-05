@@ -8,27 +8,23 @@
     <title>Click Kitten</title>
   </head>
   <body>
-    <div id='kittenDiv'>
-      <h1 id='title'>Click a Kitten</h1>
-      <div></div>
-      <div id='kittens'>
-        <div id='kitten1'>
-          <h3 class='count' id='count1'>Click Count: 0</h3>
-          <img id='pic1' class='kitten' src='http://upload.wikimedia.org/wikipedia/commons/7/75/Cute_grey_kitten.jpg' alt='An adorable gray kitten'/>
-          <div class='caption'>
-            <p>By Nicolas Suzor from Brisbane, Australia (Kittens!  Uploaded by Kaldari) [CC BY-SA 2.0 (http://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons
-            </p>
-          </div>
-        </div>
-        <div id='kitten2'>
-          <h3 class='count' id='count2'>Click Count: 0</h3>
-          <img id='pic2' class='kitten' src='http://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg' alt='An adorable orange kitten'>
-          <div class='caption'>
-            <p>By Mathias Erhart from Nenzing, Austria (red kitten 01  Uploaded by Kaldari) [CC BY-SA 2.0 (http://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons
-            </p>
-          </div>
-        </div>
-    </div>
+    <div id='main'>
+      <h1 id='title'>Pick a Kitten to Click a Kitten</h1>
+      <div id='kittenListContainer'>
+        <ul>
+          <li id='grayBeard'>GrayBeard</li>
+          <li id='orangeBeard'>OrangeBeard</li>
+          <li id='sasha'>Sasha</li>
+          <li id='mrBuggles'>Mr. Buggles</li>
+          <li id='tommy'>Tommy</li>
+        </ul>
+      </div>
+      <div id='kitten'>
+        <h3 id='count'></h3>
+        <img id='pic'>
+        <p id='caption'>
+        </p>
+      </div>
     </div>
     <script src='js/app.js'></script>
   </body>
