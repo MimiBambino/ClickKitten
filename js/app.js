@@ -1,7 +1,3 @@
-// TODO: Add jQuery to HTML file
-
-$(function(){
-
   var model = {
     currentCat: null,
     cats: [
@@ -41,6 +37,7 @@ $(function(){
   var octopus = {
 
     init : function() {
+      console.log("hi");
       // set our current cat to the first one in the list
       model.currentCat = model.cats[0];
 
@@ -58,7 +55,7 @@ $(function(){
     },
 
     // set the currently-selected cat the the object passed in 
-    setCurrentCat : function() {
+    setCurrentCat : function(cat) {
        model.currentCat = cat;
     },
 
@@ -73,9 +70,9 @@ $(function(){
 
     init : function() {
        // store pointers to our DOM elements for easy access later
-       this.catElem = document.getElementById('kitten');
-       this.catNameElem = document.getElementById('kitten-name');
-       this.catImageElem = document.getElementById('kitten-img');
+       this.catElem = document.getElementById('cat');
+       this.catNameElem = document.getElementById('cat-name');
+       this.catImageElem = document.getElementById('cat-img');
        this.countElem = document.getElementById('cat-count');
 
        // on click, increment the current cat's counter
@@ -90,11 +87,13 @@ $(function(){
     render: function() {
       // update the DOM elements with values from the current cat
       var currentCat = octopus.getCurrentCat();
+      this.countElem.textContent = currentCat.clickCount;
+      this.catNameElem.textContent = currentCat.name;
+      this.catImageElem.src = currentCat.imgSrc;
     }
   };
 
   var catListView = {
- the cats 
     init: function() {
       // store the DOM element for easy access later
       this.catListElem = document.getElementById('cat-list');
@@ -118,15 +117,16 @@ $(function(){
         // make a new cat list item and set its text
         var elem = document.createElement('li');
         elem.textContent = cat.name;
+        console.log(cat.name);
 
         // on click, setCurrentCat and render the catView
         // this uses our closure-in-a-loop trick to connect the view 
         // of the cat variable to the click event function
         elem.addEventListener('click', (function(cat) {
-           return function() {
-              octopus.setCurrentCat(cat);
-              catView.render();
-           };
+            return function() {
+                octopus.setCurrentCat(cat);
+                catView.render();
+            };
         })(cat));
 
         //finally, add the element to the list
@@ -135,5 +135,3 @@ $(function(){
     }
   };
   octopus.init();
-});
-

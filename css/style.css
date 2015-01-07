@@ -13,12 +13,13 @@ body {
 	font-size: 80px;
 }
 
-#count {
+#cat-name {
 	font-size: 40px;
 }
 
-#kittens {
-	width: 100%;
+#cat-count {
+	font-size: 40px;
+	color: #ddd;
 }
 
 #kittenListContainer {
@@ -48,7 +49,7 @@ img {
 	border-radius: 50px;
 }
 
-#kitten {
+#cat {
 	float: left;
 	width: 60%;
 	padding-left: 3%;
