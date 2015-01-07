@@ -58,3 +58,19 @@ img {
 #caption {
     width: 70%;
 }
+
+.adminArea {}
+.admin {}
+
+button {
+	margin: 10px;
+}
+
+input {
+	float: right;
+}
+label {
+	float: left;
+}
+.cancel {}
+.save {}

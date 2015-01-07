@@ -1,5 +1,6 @@
   var model = {
-    currentCat: null,
+    adminShowing : false,
+    currentCat : null,
     cats: [
         {
             clickCount : 0,
@@ -37,7 +38,6 @@
   var octopus = {
 
     init : function() {
-      console.log("hi");
       // set our current cat to the first one in the list
       model.currentCat = model.cats[0];
 
@@ -63,8 +63,43 @@
     incrementCounter: function() {
       model.currentCat.clickCount++;
       catView.render();
+    },
+
+    toggleAdmin : function() {
+      if ( model.adminShowing ) {
+          model.adminShowing = false;
+      } else {
+          model.adminShowing = true;
+          adminView.render();
+      }
+    },
+
+    updateModel : function(cat) {
+      var cats = model.cats;
+      if ( cats.indexOf(cat) != -1 ) {
+        var cat = cats.cat;
+        // TODO: update data in model.cats array ( cat.clickCount = ?; cat.name = ?; etc. )
+      } else {
+        cats.push({
+          //  clickCount : ?,
+          //  name : ?,
+          //  imgSrc : ?,
+          //  imgAttribution : ?
+        })
+      }
     }
   };
+
+  var adminView = {
+      init: function() {
+        // add even listeners to form buttons
+        // tell buttons to listen for click events
+        // Admin button: attach event listener that calls octopus.toggleAdmin when clicked
+        // Cancel button: attach event listener that calls octopus.toggleAdmin when clicked
+        // Save button: updates values for cat when clicked octopus.updateModel when clicked and then calls octopus.toggleAdmin
+      },
+      render: function() {}
+  }
 
   var catView = {
 
@@ -84,7 +119,7 @@
        this.render();
     },
 
-    render: function() {
+    render : function() {
       // update the DOM elements with values from the current cat
       var currentCat = octopus.getCurrentCat();
       this.countElem.textContent = currentCat.clickCount;
@@ -94,7 +129,7 @@
   };
 
   var catListView = {
-    init: function() {
+    init : function() {
       // store the DOM element for easy access later
       this.catListElem = document.getElementById('cat-list');
 
@@ -102,7 +137,7 @@
       this.render();
     },
 
-    render: function() {
+    render : function() {
       // get the cats we'll be rendering from the octopus
       var cats = octopus.getCats();
 
@@ -117,7 +152,6 @@
         // make a new cat list item and set its text
         var elem = document.createElement('li');
         elem.textContent = cat.name;
-        console.log(cat.name);
 
         // on click, setCurrentCat and render the catView
         // this uses our closure-in-a-loop trick to connect the view 
@@ -134,4 +168,6 @@
       };
     }
   };
+
+
   octopus.init();
